@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: support-ticket-config
+  namespace: support
+data:
+  DB_URL: jdbc:postgresql://postgres:5432/support
+  DB_USERNAME: support
+  AI_BASE_URL: https://api.openai.com
+  AI_MODEL: gpt-4o-mini

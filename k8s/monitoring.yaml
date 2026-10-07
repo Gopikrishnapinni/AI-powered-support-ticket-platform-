@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: support-ticket-api
+  namespace: support
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: support-ticket-api
+  endpoints:
+    - port: http
+      path: /actuator/prometheus
+      interval: 15s
